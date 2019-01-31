@@ -5,7 +5,7 @@
 #### Description of Final Product
 
   * Four cubes/bricks created in any general CAD software ready for DAGMC. Meshed with "Tetmesh"
-  * Void volume (with creation example in both Cubit/Trelis and Solidworks)
+  <* Void volume (with creation example in both Cubit/Trelis and Solidworks)>
 
 #### Goals of Example
 
