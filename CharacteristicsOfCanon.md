@@ -1,35 +1,32 @@
 # Characteristics of a Canonical Geometry
 
-**Canonical geometries should contain all aspects of the workflow so that
+__ _Canonical geometries should contain all aspects of the workflow so that
 through the creation of the geometries one encounters all methods and
-considerations necessary to create functional models.**
+considerations necessary to create functional models._ __
 
-### First, Basic Model
+### Basic Models
 
-* Multiple volumes
-* Shared surfaces
-* Overlaps
-* Unnecessary details to be removed (holes/threads)
-* Non-solid volumes
-* Small Gaps
-* Some applicability to real-life models
+  * __Simple Model__
+    - Show workflow in a model without complications.
+    - Introduce issues arising from Cubit/Trelis.
+    - Show basic functionality of Cubit/Trelis such as imprinting/merging, assigning materials, and meshing.
 
-### Examples of/Ideas for basic models
+  * __Simple Model with Geometric issues__
+    - Go through workflow with a model with geometric complications that are still easy to understand/visualize.
+    - Show basic functionality of SpaceClaim by fixing geometric issues.
+      * Overlaps
+      * Unnecessary details to be removed
+      * Small gaps
+      * Curve coincident to surface
 
-* Four Boxes with extraneous features such as a liquid volume, holes (threads?)
-
-  - Doesn't have applicability to real-life models
-  - Can easily be made to have all other characteristics
-  - Easy dimensions will make for easy tutorial and easy geometry to mesh and visually check for errors
-  - Can use the trelis/cubit meshing tutorials as direct reference
-
-* Radial model
-  - Some applicability, could be a basis to build further complex models
-  - Can easily be made to have all other basic characteristics
-  - May be made to exemplify curvilinear CAD issues
+  * __Radial model__
+    - Go through workflow with some applicability, could be a basis to build further complex models
+    - Exemplifies curvilinear CAD issues
+    - Introduces reflecting boundaries
 
 ### Auxiliary, Difficult Models (Further design considerations)
 
 * MELCOR geometry (flows that split and recombine)
 * Toroidal geometry with thin walls that may lose particles
 * A radial slice where one encounters boundary conditions
+* Implementation of reflecting boundaries
