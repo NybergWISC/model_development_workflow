@@ -93,18 +93,19 @@ _Imprinting and Merging surfaces accelerates the DAGMC process by combining surf
 
 
 #### Meshing in Cubit/Trelis
-_The originally intended use of Cubit and Trelis was to mesh models for analysis. DAGMC uses "Tetmesh", a triangular mesh, to perform analysis._
+_Meshing is completed automatically when running_ `export dagmc` _, but meshing in Cubit/Trelis can be used to create unstructured mesh tallies. This is an example of how one could use tetmesh to mesh volumes for this purpose. More information on DAGMC unstructured mesh tallies can be found_ [here](https://svalinn.github.io/DAGMC/usersguide/tally.html).
 
-  1. Set the sizing factor to prepare part for meshing
-      * In the command panel select the __Mesh (purple cube)-> Volume -> Intervals (square with dimensioning lines)__. Type "all" into the select volumes box to select all of the volumes for setting intervals. Auto factor with the default coarseness is acceptable so hit "Apply".
-      * For command line type `volume all size auto factor 5`
-        - This command creates an auto sized mesh with the default/medium coarseness
-        - Typing `volume all size #` would select the first four volumes as listed in the model tree and set the size of any future mesh to # units.
-      * Note that one could select smaller subsets of volumes and mesh each at different levels of coarseness. This may be useful if some volumes require more/less precision than others.
-  2. Mesh files with tetmesh
-      * In the command panel directly to the right of the "Intervals" action select the "Mesh" action. Type `all` into the box under "Select Volumes" or click the box and hold the control key while selecting all of the cubes. Then select "Tetmesh" from the dropdown menu under "Select Meshing Scheme" and click mesh.
-      * To mesh through command line you must set the mesh scheme to Tetmesh and then mesh separately. To set the scheme to Tetmesh type "`volume all scheme tetmesh` then after that command is complete simply type "mesh volume all" and the cubes will be successfully meshed with Tetmesh.
-      * You may want to explore how the options for this action affect the final mesh, but default settings are fine for our purposes. Now all surfaces are described by triangular meshes that will be used during analysis.
+1. Set the sizing factor to prepare part for meshing
+    * In the command panel select the __Mesh (purple cube)-> Volume -> Intervals (square with dimensioning lines)__. Type "all" into the select volumes box to select all of the volumes for setting intervals. Auto factor with the default coarseness is acceptable so hit "Apply".
+    * For command line type `volume all size auto factor 5`
+      - This command creates an auto sized mesh with the default/medium coarseness
+      - Typing `volume all size #` would select the first four volumes as listed in the model tree and set the size of any future mesh to # units.
+    * Note that one could select smaller subsets of volumes and mesh each at different levels of coarseness. This may be useful if some volumes require more/less precision than others.
+2. Mesh files with tetmesh
+    * In the command panel directly to the right of the "Intervals" action select the "Mesh" action. Type `all` into the box under "Select Volumes" or click the box and hold the control key while selecting all of the cubes. Then select "Tetmesh" from the dropdown menu under "Select Meshing Scheme" and click mesh.
+    * To mesh through command line you must set the mesh scheme to Tetmesh and then mesh separately. To set the scheme to Tetmesh type "`volume all scheme tetmesh` then after that command is complete simply type "mesh volume all" and the cubes will be successfully meshed with Tetmesh.
+    * You may want to explore how the options for this action affect the final mesh, but default settings are fine for our purposes. Now all surfaces are described by triangular meshes that will be used during analysis.
+3. Follow the steps laid out in the link listed in this description.
 
 #### Assigning Materials in Cubit/Trelis
 _Most commands for this section are best implemented through the command line. More general instructions can
@@ -118,3 +119,12 @@ be found_ [here](http://svalinn.github.io/DAGMC/usersguide/codes/dag-mcnp.html).
       * To assign the rest of the blocks to the second material use `group "mat:2/rho:0.03" add vol 2 to 4`
       * To assign the void volume to vacuum use "group `mat:Vacuum" add vol 5`
       * Finally to assign the graveyard volume use "group `mat:Graveyard" add vol 6`
+
+#### Exporting file to .h5m format
+_This plugin translates the CAD file to something that can be analyzed by DAGMC. Instructions as to how to install this plugin can be found_ [here](https://svalinn.github.io/DAGMC/install/plugin.html).
+
+1. Once the plugin is correctly installed you should receive the message `Loaded Svalinn plugin`, line break, `DAGMC export command available` in the command line.
+2. Once all issues are resolved in the model, export the file as .h5m, this command must be executed through the command line.
+  * The general form of the export command is `export dagmc "<filename>" [options]`. To see the options available enter `help export dagmc` into the command line.
+  * The filename should include the filepath after the working directory so that it designates where the file ought to be saved after export.
+  * For this part `export dagmc "Desktop/SimpleBlockX4.h5m"` will create the part as a .h5m with default settings in the Desktop.
