@@ -18,7 +18,8 @@ _Any CAD engine should work for this process as long as it can export to a
 format importable by SpaceClaim or Cubit/Trelis. The preferred format is ACIS (.sat)._
   1. Create four solid bricks/cubes with edges of length 100cm that are separated by 50 cm
       * In Solidworks/Catia you can either make an assembly from 4 cubes or one part
-        with 4 cubes - Either will work, but depending on the ACIS exporter the program
+        with 4 cubes. 
+      * Either will work, but depending on the ACIS exporter the program
         may ask you to convert file to part. This is fine, the volumes will remain
         separate entities in the next steps.
   2. Export the assembly/part to ACIS format (.sat file extension)
