@@ -21,4 +21,6 @@ __Tutorials using specific models to explain and demonstrate important parts of 
      - [Blocks in solidworks assembly format](ErrorBlocks.SLDASM)
      - [Blocks in ACIS (.sat) format](ErrorBlocks.SAT)
      - [Blocks in SpaceClaim format](ErrorBlocks.scdoc)
-
+     
+  * Example of Complex Model to Show Possible Complications
+     - [Full tutorial](ComplexAssembly.md)
