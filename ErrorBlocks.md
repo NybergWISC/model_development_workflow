@@ -29,7 +29,7 @@ _Any CAD engine should work for this process as long as it can export to a forma
     * ACIS format 22 is preferred (default for Solidworks)
     * Use save or export feature and select ACIS (.sat) format
 
-![alt text](./PicturesSnapshots/ErrorBlocks/ErrorBlocksOverviewWide.jpg "ErrorBlocks in Solidworks")
+![alt text](../../PicturesSnapshots/ErrorBlocks/ErrorBlocksOverviewWide.jpg "ErrorBlocks in Solidworks")
 
 <details><summary> Notes </summary><p>
 - The preferred format is ACIS (.sat). Note that multiple file types could be used, but there is anecdotal evidence that suggests .sat files work the best for this process. Otherwise formats such as STEP and STL are also able to be imported to Trelis/Cubit.
